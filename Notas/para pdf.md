@@ -1,115 +1,7 @@
 
-### Clase 29 *Reto 4*
-
-Nos queda la Jerarquía Account pendiente.
-
-Tomando como referencia nuestros diagramas. Plásmala en tu lenguaje de programación favorito.
-
-Compártenos tus resultados.
-
-![src/POO_133](../src/POO_133.png)
-
-## Modulo 6. Encapsulamiento
-### Clase 30 *Encapsulamiento*
-
-Ya casi estamos terminando nuestro proyecto y estamos dando los últimos detalles que claro no son menos importantes porque aquí estaremos viendo las restricciones que tendrá cada clase.
-
-Recordemos nuestra clase Car ahora añadiremos para imprimir la cantidad de pasajeros:
-
-![src/POO_134](../src/POO_134.png)
-
-Mientras que la archivo Main definimos una variable de tipo UberX:
-
-![src/POO_135](../src/POO_135.png)
-
-***RECUERDA: UberX hereda de Car, por lo que tiene todos sus métodos y atributos.***
-
-**¿Qué pasa si ejecutamos el programa?**
-
-Pues no imprimirá la licencia, el nombre del conductor y la cantidad de pasajeros que puede llevar. ¿Y si cambiamos passenger de 4 a 3? Pues nada extraños, nos seguirá  imprimiendo todo perfectamente.
-
-Pero si lo meditamos un poco, las reglas de Uber dicen que los vehículo de categoría UberX  deben tener al menos cuatro pasajeros sin contar al conductor, es decir, aceptan cinco personas dentro pero cuatro lugares deben quedar disponible para ese vehículo. Entonces, si colocamos que passenger sea igual a tres generara una inconsistencia en nuestros datos. Una inconsistencia que podemos prevenir al hacer que nadie pueda alterar ese parámetro.
-
-Y precisamente de eso trata nuestra clase de hoy: no alterar un parámetro, que nadie más tenga acceso, y la única forma que tenemos en Java (y en la programación orientada a objetos) será escondiendo ese parámetro, dejarlo invisible o al menos invalidado para los demás implementando la encapsulación.
-
-**Encapsulamiento**
-
-Este concepto consiste en la ocultación del estado o de los datos miembro de un objeto, de forma que sólo es posible modificar los mismos  mediante los métodos definidos para dicho objeto. Es decir, limitamos el acceso a las variables de nuestras clases.
-
-Y es justamente eso lo que nosotros deseamos hacer, esconder el atributo passenger para que no pueda ser alterado o que al menos no le pongan datos que ni siquiera tengan que ver con la lógica de nuestro negocio.
-
-**¿Como se encapsulan los datos?**
-
-Cuando realizamos un abstracción en una clase para luego instanciarla y crear un objeto no se necesita conocer a fondo la implementación solo se necesita poder instanciar esa clase tampoco necesita conocer todas las propiedades de un objeto o acceder a ellas de forma directa, por  ello podemos crear diferentes métodos y forzar a utilizar métodos definidos para modificar estas propiedades.
-
-Para realizar el proceso anterior se necesita conocer los modificadores de acceso. Los modificadores de acceso permiten dar un nivel de seguridad mayor a nuestras aplicaciones restringiendo el acceso a diferentes atributos, métodos, constructores asegurándonos que el usuario deba seguir una "ruta" especificada por nosotros para acceder a la información.
-
-Es muy posible que nuestras aplicaciones vayan a ser usadas por otros programadores o usuarios con cierto nivel de experiencia; haciendo uso de los modificadores de acceso podremos asegurarnos de que un valor no será modificado incorrectamente por parte de otro programador o usuario. Generalmente el acceso a los atributos se consigue por medio de los métodos get y set, pues es estrictamente necesario que los atributos de una clase sean privados.
-
-Teniendo en cuenta la siguiente imagen:
-
-![src/POO_136](../src/POO_136.png)
-
-- El recuadro verde hace referencia al modificador de acceso público (**public**). Es el más permisivo de todos, esto quiere decir que si el componente de una clase es public, tendremos acceso a él desde cualquier clase o instancia sin importar el paquete o procedencia de ésta.
-- El recuadro azul hace referencia al modificador de acceso protegido (**protected**). Nos permite acceso a los componentes con dicho modificador desde la misma clase, clases del mismo paquete y clases que hereden de ella (incluso en diferentes paquetes).
-- El recuadro amarillo hace referencia al modificador de acceso por defecto (**default**). Java nos da la opción de no usar un modificador de acceso y al no hacerlo, el elemento tendrá un acceso conocido como default, acceso por defecto, que permite que tanto la propia clase como las clases del mismo paquete accedan a dichos componentes (de aquí la importancia de declararle siempre un paquete a nuestras clases).
-- El recuadro rojo hace referencia al modificador de acceso privado (**private**). Es el más restrictivo de todos, básicamente cualquier elemento de una clase que sea privado puede ser accedido únicamente por la misma clase por nada más. Es decir, si por ejemplo, un atributo es privado solo puede ser accedido por lo métodos o constructores de la misma clase. Ninguna otra clase sin importar la relación que tengan podrá tener acceso a ellos.
-
-### Clase 31 *Encapsulando atributos en Java*
-
-Ahora que ya entendimos sobre encapsulamiento y cuáles son los datos a encapsular vamos a hacerlo en nuestras clases.
-
-Estamos en nuestro proyecto y quedamos que passenger sea validado, el hecho de que tuviera 3 lugares disponibles no es algo que va con la regla de nuestro negocio. Para eso vamos a arreglar esto poniendo un modificador de acceso en la clase Car. ¿Por qué la clase Car? Porque ahí precisamente es donde se encuentra nuestro atributo passenger y actualmente se ve así:
-
-![src/POO_137](../src/POO_137.png)
-
-El atributo passenger no tiene ningún modificador, es decir, su acceso es default. Podemos escribir ***public Integer passenger;*** para que sea de acceso público, pero nosotros queremos esconderlo y que sea accesible únicamente para la clase, por lo que su modificador será private.
-
-Entonces quedara de este modo:
-
-![src/POO_138](../src/POO_138.png)
-
-Pero si lo ejecutamos nos saldrá error:
-
-![src/POO_139](../src/POO_139.png)
-
-Y eso se a que el atributo passenger ya no se encuentra visible para la clase Main, pero si continua siendo visible para la clase Car. Por eso, si nosotros queremos, podemos imprimir passenger desde el constructor de la siguiente forma:
-
-![src/POO_140](../src/POO_140.png)
-
-
-![src/POO_141](../src/POO_141.png)
-
-
-Los que hicimos fue en la clase Car, dentro del constructor, darle al atributo passenger un valor de 3 (asientos disponibles) y debajo imprimimos en pantalla. Mientras que en la clase Main simplemente eliminamos o comentamos nuestro acceso al atributo passenger. Si esto lo ejecutamos podemos ver cómo nos corre perfectamente, sin embargo, si lo intentamos correr directamente a través de Main nos dará error porque el atributo passenger es privado y solo visible dentro de su clase.
-
-Ahora vamos a darle un poco de forma y sentido. ¿Por qué lo dejamos accesible dentro de la clase? Porque necesitamos validarlo, lo que nosotros deseamos es que cuando alguien quiera ingresar los datos sobre la cantidad de asientos disponibles definitivamente debe ser de cuatro para los de tipo UberX.
-
-Por eso, y para acceder a los datos privados, usaremos métodos especiales.
-
-Los métodos get y set, son simples métodos que usamos en las clases para mostrar (get) o modificar (set) el valor de un atributo. El nombre del método siempre será get o set y a continuación el nombre del atributo, su modificador siempre es public ya que queremos mostrar o modificar desde fuera la clase.
-
-Agregando los métodos get y set a nuestro programa quedaría así:
-
-![src/POO_142](../src/POO_142.png)
-
-![src/POO_143](../src/POO_143.png)
-
-Creamos los métodos getPassenger y setPassenger.
-
-- **getPassenger:** Retorna nuestro atributo passenger.
-- **setPassenger:** Asigna el valor similar a como lo hicimos dentro del constructor.
-
-Con esos dos métodos creados, en la clase Main podemos acceder a setPassenger y por parámetro enviar el valor para passenger. Y si este código lo ejecutamos nos seguirá corriendo perfectamente. Podríamos pensar que es exactamente lo mismo solo que cambiamos la variable por un método, pero no es así. Ahora seremos capaces de validar los valores enviados a passenger para que no permitir que ningún otro valor diferente a cuatro sea agregado o incluso enviar un parámetro vacío.
-
-![src/POO_144](../src/POO_144.png)
-
-Dentro del método setPassenger validamos para que el valor del atributo passenger siempre sea cuatro, en caso de que se ingrese otro, entonces nos marcara error. Con esto ya todos los futuros conductores estarán obligados a poner cuatro asientos disponibles para que les funcione la aplicación.
-
-Incluso podríamos validar los datos dentro de printDataCar para que todos atributo sean diferente a null, es decir, que siempre tengan un valor.
 
 ## Modulo 7. Polimorfismo
-### Clase 32 *Generando polimorfismo en Java*
+# Clase 32 *Generando polimorfismo en Java*
 
 Polimorfismo: Muchas formas. Poli = muchas, morfismo = formas. NO es Poliformismo
 
@@ -193,7 +85,7 @@ Ahora, sí ejecutamos el código, podemos ver cómo nos imprime perfectamente ta
 ![src/POO_152.png](../src/POO_152.png)
 
 ## Modulo 8. Cierre del curso
-### Clase 33 *El Diagrama UML de Uber*
+# Clase 33 *El Diagrama UML de Uber*
 
 Este es el diagrama que finalmente obtuvimos, aquí solo faltaría añadirle los atributos que posee cada clase.
 
@@ -243,7 +135,7 @@ Esta clase Trip poseerá la lógica más fuerte del negocio aquí será donde se
 
 Esto es todo nuestro diagrama de clases, que quedó totalmente expresado en nuestro proyecto.
 
-### Clase 34 *Conclusiones*
+# Clase 34 *Conclusiones*
 
 Has llegado al final del curso de Programación Orientado a Objetos y fue un placer para todos ir en esta travesía de aprendizaje donde aprendimos primeramente a analizar un problema y no cualquier problema, sino que fue un problema de la vida real. Con nuestro proyecto Uber pudimos aprender el análisis que luego convertimos en gráficas y finalmente en un diagrama UML que nos permitió llevarlo directamente a la fase de programación. Y no solo fue un único lenguaje de programación, estuvimos aprendiendo cuatro lenguajes: Java, Python, PHP y JavaScript.
 
@@ -256,7 +148,7 @@ No olvides los pilares de la Programación Orientado a Objetos :
 
 Y por supuesto no olvides las clases, los objetos y todo lo que hemos aprendido aquí.
 
-### Clase 35 *Bonus: Qué es la Programación Orientada Objetos*
+# Clase 35 *Bonus: Qué es la Programación Orientada Objetos*
 
 Imaginemos que tenemos un videojuego de fútbol en el cual debemos representar a los jugadores de cada equipo, con la Programación Orientada a Objetos podemos hacer una abstracción de todo esto.
 
