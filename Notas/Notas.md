@@ -1,4 +1,3 @@
-# Curso de Programación Estructurada
 ## Modulo 1. Bienvenida e Introducción
 ### Clase 1 *¿Por qué aprender Programación Orientada a Objetos?*
 
