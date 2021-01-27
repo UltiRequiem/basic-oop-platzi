@@ -23,7 +23,7 @@ En resumen, al dejar de ser un Programador Jr. y poder analizar mucho mejor tus 
   - Entendimiento
   - Lectura
 
-  Durante nuestro análisis lo que estaremos haciendo es observar, entender y leer muy bien la situación del problema, que está ocurriendo y comenzaremos a pensar de forma distinta.
+Durante nuestro análisis lo que estaremos haciendo es observar, entender y leer muy bien la situación del problema, que está ocurriendo y comenzaremos a pensar de forma distinta.
 
 - **Plasmar**
   - Diagramas
