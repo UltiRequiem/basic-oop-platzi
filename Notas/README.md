@@ -4,6 +4,6 @@
 
 En esta sección encontraras mis notas del curso,espero que te sean utiles si es que no llegaste a entender algo.
 
-Tambien puedes visualizar mis notas en formato PDF [aquí](./Libro.pdf)
+Tambien puedes visualizar mis notas en formato PDF [aquí](./Libro.pdf).
 
 ![Nunca pares de aprender](https://media-exp1.licdn.com/dms/image/C561BAQGPbpBagNdVzg/company-background_10000/0?e=2159024400&v=beta&t=ts0yG3Y61n2HOHfhLafGWfJTx2aspBS5a_KZkIJepuI)
