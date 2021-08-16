@@ -1,4 +1,5 @@
 ## Los Objetos Principales:
+
 - Cliente / User: El que va a adoptar una mascota.**(Adopción)**
 - Mascota / Producto: Es el animal que va a ser adoptado. **(User/Adopción)**
 - Encargado: El encargado de la mascota. **(Mascota)**

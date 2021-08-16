@@ -1,4 +1,4 @@
-//Mostrar cómo se llama un objeto en JS 
+//Mostrar cómo se llama un objeto en JS
 var uberX = new UberX();
 console.log(uberX.model);
 console.log(uberX.brand);
