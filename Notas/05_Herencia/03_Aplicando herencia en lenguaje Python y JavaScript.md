@@ -1,6 +1,8 @@
-# Clase 27 *Aplicando herencia en lenguaje Python y JavaScript*
+# Clase 27 _Aplicando herencia en lenguaje Python y JavaScript_
 
-Recuerdas que en Python la herencia se expresa de manera muy similar a un método constructor de otros lenguajes. Apliquemos herencia para nuestra familia Car, para esto crearemos las siguientes clases:
+Recuerdas que en Python la herencia se expresa de manera muy similar a un método
+constructor de otros lenguajes. Apliquemos herencia para nuestra familia Car,
+para esto crearemos las siguientes clases:
 
 - UberX.py
 - UberPool.py
@@ -15,11 +17,14 @@ Recuerdas que en Python la herencia se expresa de manera muy similar a un métod
 
 ![src/POO_125](../src/POO_125.png)
 
-El código completo puedes verlo [aquí](https://github.com/anncode1/Curso-POO-Platzi/tree/2cbdf9db470a98323328f8a21bf6a9de941d008e/Python "aquí")
+El código completo puedes verlo
+[aquí](https://github.com/anncode1/Curso-POO-Platzi/tree/2cbdf9db470a98323328f8a21bf6a9de941d008e/Python "aquí")
 
 **JavaScript**
 
-En clases anteriores te expliqué cómo ejecutar herencia en estándares anteriores al ECMAScript 6. Uno de los beneficios de utilizar este nuevo estándar que ejecutar herencia es tan simple como utilizar la palabra reservada extends.
+En clases anteriores te expliqué cómo ejecutar herencia en estándares anteriores
+al ECMAScript 6. Uno de los beneficios de utilizar este nuevo estándar que
+ejecutar herencia es tan simple como utilizar la palabra reservada extends.
 
 ![src/POO_126](../src/POO_126.png)
 
@@ -29,7 +34,8 @@ En clases anteriores te expliqué cómo ejecutar herencia en estándares anterio
 
 ![src/POO_129](../src/POO_129.png)
 
-Ahora para utilizar una de las clases y crear un objeto, por ejemplo de UberX, no olvides declarar la clase en el archivo index.html.
+Ahora para utilizar una de las clases y crear un objeto, por ejemplo de UberX,
+no olvides declarar la clase en el archivo index.html.
 
 ![src/POO_130](../src/POO_130.png)
 
@@ -37,4 +43,5 @@ Nuestro ejemplo se verá así:
 
 ![src/POO_131](../src/POO_131.png)
 
-El código completo puedes verlo [aquí]( https://github.com/anncode1/Curso-POO-Platzi/tree/9251101bdc2722ed13f9d93cb432ba8e9aba17b4/JS "aquí")
+El código completo puedes verlo
+[aquí](https://github.com/anncode1/Curso-POO-Platzi/tree/9251101bdc2722ed13f9d93cb432ba8e9aba17b4/JS "aquí")
